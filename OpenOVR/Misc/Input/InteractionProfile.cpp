@@ -11,6 +11,7 @@
 #include "InteractionProfile.h"
 #include "KhrSimpleInteractionProfile.h"
 #include "OculusInteractionProfile.h"
+#include "Pico4InteractionProfile.h"
 #include "ReverbG2InteractionProfile.h"
 #include "ViveInteractionProfile.h"
 #include "ViveTrackerInteractionProfile.h"
