@@ -39,6 +39,9 @@ XrExt::XrExt(XrGraphicsApiSupportedFlags apis, const std::vector<const char*>& e
 			supportsG2Controller = true;
 		if (strcmp(ext, XR_MNDX_XDEV_SPACE_EXTENSION_NAME) == 0)
 			xdevSpace = true;
+		// Required for Pico4 because opencomposite uses OpenXR 1.0
+		if (strcmp(ext, XR_BD_CONTROLLER_INTERACTION_EXTENSION_NAME) == 0)
+			supportsPico4Controller = true;
 	}
 
 #define XR_BIND(name, function) OOVR_FAILED_XR_ABORT(xrGetInstanceProcAddr(xr_instance, #name, (PFN_xrVoidFunction*)&this->function))

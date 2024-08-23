@@ -2,12 +2,11 @@
 
 clear
 
-rootdir=$rootdir
+rootdir=$(pwd)
 
 #rmdir "$rootdir/build"
 if [ ! -d "$rootdir/build" ]; then
     mkdir "$rootdir/build"
-
 fi
 cd "$rootdir/build"
 cmake ..
@@ -29,7 +28,9 @@ make
 #echo " "
 #echo "Done."
 
-mv "$(pwd)/bin/linux64/vrclient.so" "$rootdir/build/libopenvr_api.so"
+if [ -f "$(pwd)/bin/linux64/vrclient.so" ]; then
+    mv "$(pwd)/bin/linux64/vrclient.so" "$rootdir/build/libopenvr_api.so"
+fi
 
 echo " "
 echo " "

@@ -229,6 +229,10 @@ IBackend* DrvOpenXR::CreateOpenXRBackend(const char* startupInfo)
 	if (availableExtensions.contains(XR_EXT_HP_MIXED_REALITY_CONTROLLER_EXTENSION_NAME))
 		extensions.push_back(XR_EXT_HP_MIXED_REALITY_CONTROLLER_EXTENSION_NAME);
 
+	// Required for Pico4 because opencomposite uses OpenXR 1.0
+	if (availableExtensions.contains(XR_BD_CONTROLLER_INTERACTION_EXTENSION_NAME))
+		extensions.push_back(XR_BD_CONTROLLER_INTERACTION_EXTENSION_NAME);
+
 	const char* const layers[] = {
 #ifdef XR_VALIDATION_LAYER_PATH
 		"XR_APILAYER_LUNARG_core_validation",

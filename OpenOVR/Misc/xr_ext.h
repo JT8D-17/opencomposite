@@ -68,6 +68,7 @@ public:
 	bool G2Controller_Available() { return supportsG2Controller; }
 	bool xrGetVisibilityMaskKHR_Available() { return pfnXrGetVisibilityMaskKHR != nullptr; }
 	bool xrMndxXdevSpace_Available() { return pfnxrCreateXDevSpaceMNDX != nullptr; }
+	bool Pico4Controller_Available() { return supportsPico4Controller; }
 
 	XrResult xrGetVisibilityMaskKHR(
 	    XrSession session,
@@ -221,6 +222,7 @@ private:
 	PFN_xrCreateXDevSpaceMNDX pfnxrCreateXDevSpaceMNDX = nullptr;
 
 	bool supportsG2Controller = false;
+	bool supportsPico4Controller = false;
 
 #if defined(SUPPORT_DX) && defined(SUPPORT_DX11)
 	PFN_xrGetD3D11GraphicsRequirementsKHR pfnXrGetD3D11GraphicsRequirementsKHR = nullptr;

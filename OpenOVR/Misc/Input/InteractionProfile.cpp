@@ -103,6 +103,8 @@ const InteractionProfile::ProfileList& InteractionProfile::GetProfileList()
 	if (profiles.empty()) {
 		if (xr_ext->G2Controller_Available())
 			profiles.emplace_back(std::make_unique<ReverbG2InteractionProfile>());
+		if (xr_ext->Pico4Controller_Available())
+			profiles.emplace_back(std::make_unique<Pico4InteractionProfile>());
 
 		profiles.emplace_back(std::make_unique<HolographicInteractionProfile>());
 		profiles.emplace_back(std::make_unique<IndexControllerInteractionProfile>());
