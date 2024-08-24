@@ -113,30 +113,30 @@ const InteractionProfile::LegacyBindings* Pico4InteractionProfile::GetLegacyBind
 		bindings = {};
 
 		if (handPath == "/user/hand/left") {
-			bindings.btnA = "/input/x/click";
-			bindings.btnATouch = "/input/x/touch";
-			bindings.menu = "/input/y/click";
-			bindings.menuTouch = "/input/y/touch";
-			bindings.system = "/input/menu/click";
+			bindings.btnA = "input/x/click";
+			bindings.btnATouch = "input/x/touch";
+			bindings.menu = "input/y/click";
+			bindings.menuTouch = "input/y/touch";
+			bindings.system = "input/menu/click";
 		} else {
-		bindings.btnA = "/input/a/click";
-		bindings.btnATouch = "/input/a/touch";
-		bindings.menu = "/input/b/click";
-		bindings.menuTouch = "/input/b/touch";
+			bindings.btnA = "input/a/click";
+			bindings.btnATouch = "input/a/touch";
+			bindings.menu = "input/b/click";
+			bindings.menuTouch = "input/b/touch";
 		}
 
-		bindings.triggerClick = "/input/trigger/click";
-		bindings.trigger = "/input/trigger/value";
-		bindings.triggerTouch = "/input/trigger/touch";
-		bindings.stickY = "/input/thumbstick/y";
-		bindings.stickX = "/input/thumbstick/x";
-		bindings.stickBtn = "/input/thumbstick/click";
-		bindings.stickBtnTouch = "/input/thumbstick/touch";
-		//bindings.gripClick = "/input/squeeze/click"; // INOP
-		bindings.grip = "/input/squeeze/value";
-		bindings.gripPoseAction = "/input/grip/pose";
-		bindings.aimPoseAction = "/input/aim/pose";
-		bindings.haptic = "/output/haptic";
+		bindings.triggerClick = "input/trigger/click";
+		bindings.trigger = "input/trigger/value";
+		//bindings.triggerTouch = "input/trigger/touch";
+		//bindings.stickY = "input/thumbstick/y";
+		//bindings.stickX = "input/thumbstick/x";
+		bindings.stickBtn = "input/thumbstick/click";
+		bindings.stickBtnTouch = "input/thumbstick/touch";
+		//bindings.gripClick = "input/squeeze/click"; // INOP
+		bindings.grip = "input/squeeze/value";
+		bindings.gripPoseAction = "input/grip/pose";
+		bindings.aimPoseAction = "input/aim/pose";
+		bindings.haptic = "output/haptic";
 
 	}
 	return &bindings;
